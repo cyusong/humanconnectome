@@ -131,3 +131,4 @@ if __name__ == '__main__':
     v = open('stats.txt','w')
     v.write(str(len(papers))+'\t'+str(items))
     v.close()
+    app.run(debug=True)
