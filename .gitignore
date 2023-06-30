@@ -6,3 +6,5 @@ main.py
 GPT_surfer_by_journal.py
 GPT_surfer_by_pubmedID.py
 edges.txt
+.DS_Store
+__pycache__
