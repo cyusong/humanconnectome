@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block dependencies %}
+{{ super() }}
+<script src = "{{ url_for('static', filename = 'js/index.js') }}" defer> </script>
+<script src = "{{ url_for('static', filename = 'js/count_animation.js' )}}" defer> </script>
+{% endblock %}
+
+<!-- Discord link: https://discord.gg/qr8tYYHu7Y -->
+
+{% block content %}
+<div class="callout large">
+  <div class = "row column text-center">
+   
+    <!--3D GenomeConnectome heading-->
+      <h1> 3D GenomeConnectome </h1>
+
+      <p> by the <a href = "https://www.plant.tools/" target = "_blank"> Mutwil Lab </a> </p>
+      <p class = "lead"> 
+        <br>
+        The product of processing <strong class = "count"> 101341 </strong> publications with GPT's assistance, PlantConnectome is a powerful resource providing insights into <strong class = "count"> 387777 </strong> relationships involving genes, molecules, compartments, stresses, organs, and other plant entities. 
+      </p>
+  </div>
+</div>
+
+<div class = "grid-container">
+  <div class = "grid-x grid-margin-x">
+    <div class = "medium-6 cell small-order-1 medium-order-1">
+      <h3> Search by... </h3>
+      <form action = "{{ url_for('form', form_type = 'gene_id', search_type = 'normal') }}" method = 'POST' id = 'gene-form'>
+        <label>
+          ...gene, molecule, compartment, stress, cell type, organ, or other related terms.
+          <input type = "text" placeholder = "e.g., CESA (hit 'Enter' to search)" aria-describedby = "searchfield1" id = "gene_id" name = 'gene_id'>
+          <div class = "button-group">
+            <input type = "Submit" class = 'button' value = "Word">
+            <input type = "Submit" class = 'button' formaction = "{{ url_for('form', form_type = 'gene_id', search_type = 'exact') }}" value = "Exact">
+            <input type = "Submit" class = 'button' formaction = "{{ url_for('form', form_type = 'gene_id', search_type = 'alias') }}" value = "Alias">
+            <input type = "Submit" class = 'button' formaction = "{{ url_for('form', form_type = 'gene_id', search_type = 'substring') }}" value = "Substring">
+            <input type = "Submit" class = 'button' formaction = "{{ url_for('form', form_type = 'gene_id', search_type = 'non_alpha') }}" value = "Non-alphanumeric">
+          </div>
+        </label>
+      </form>
+      <form action = "{{ url_for('form', form_type = 'author', search_type = 'author_search.author') }}", method = 'POST' id = 'name-form'>
+        <label>
+            ...author name (without special characters - for instance, accents).
+            <input type = "text" placeholder = "e.g., Marek Mutwil (hit 'Enter' to search)" aria-describedby = "searchfield2" id = 'author' name = 'author'>
+            <input type = "Submit" class = 'button' value = "Search">
+        </label>
+      </form>
+      <form action = "{{ url_for('form', form_type = 'title', search_type = 'title_searches.title_search') }}", method = 'POST' id = 'title-form'>
+        <label>
+          ...by Pubmed ID (separated by commas).
+          <input type = "text" placeholder = "e.g., 26503768 (hit 'Enter' to search)" aria-describedby = "searchfield3" id = 'title' name = 'title'>
+        </label>
+        <input type = "Submit" class = 'button' value = "Search">
+      </form>
+    </div>
+    <div class = 'medium-6 cell medium-order-2 '>
+      <h4> Search instructions <small> (click on a button to learn more) </small> </h4>
+      <div class = 'button-group'>
+        <div class = 'button hollow'> Word </div>
+        <div class = 'button hollow'> Exact </div>
+        <div class = 'button hollow'> Alias </div>
+        <div class = 'button hollow'> Substring </div>
+        <div class = 'button hollow'> Non-alphanumeric </div>
+      </div>
+      <div class = 'text-left' id = 'help-text'>
+        <!-- Will be populated using the DOM API -->
+      </div>
+      <!--
+      <h3> Instructions for searching </h3>
+      <ol>
+        <li> Use "?" for a matching word (e.g., heat?) </li>
+        <li> Use "!" for an exact match (e.g., pin1!) </li>
+        <li> Use "&" for matching and related words </li>
+        <li> Use "@" for matching gene and genes with shared aliases </li>
+      </ol>
+      -->
+      <!--
+      <hr>
+      <h4> Some searching tips: </h4>
+      <ol>
+        <li> The search engine is rather simple (at least for now), so a 100% match is required. </li>
+        <li> Consider using partial search terms to broaden your results (e.g., "CESA" as opposed to "CESA1"). </li>
+      </ol>
+      -->
+    </div>
+  </div>
+</div>
+{% endblock %}

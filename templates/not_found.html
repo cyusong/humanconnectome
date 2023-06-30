@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class = "grid-container fluid">
+  <br>
+  <h2> No hits were found using the query: {{ search_term }} </h2>
+  <p> Please try another search term or check your spelling. </p>
+  <button class = 'button primary' onclick = "window.location.href = '{{ url_for('index') }}'"> Go back </button>
+</div>
+{% endblock %}
