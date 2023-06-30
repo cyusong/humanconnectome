@@ -67,7 +67,7 @@ def generate_term_api_route(query_type):
     def api_route(query):
         if len(query):
             forSending, elements, summary = [], [], ''
-            to_search, func_anno = pickle.load(open('allDic2', 'rb')), pickle.load(open('fa', 'rb'))[0]
+            to_search, func_anno = pickle.load(open('allDic', 'rb')), pickle.load(open('fa', 'rb'))[0]
             abbr = pickle.load(open('abbreviations', 'rb'))[0]
 
             for term in query.split(';'):

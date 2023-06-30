@@ -31,7 +31,7 @@ def similarity(query, type):
     forSending = []
     if query != "" and type != "":
         # search all the nodes with the same term
-        genes = pickle.load(open('allDic2', 'rb'))
+        genes = pickle.load(open('allDic', 'rb'))
         if type == "ab":
             f = pickle.load(open('abbreviations', 'rb'))
             typa = "abbreviation"

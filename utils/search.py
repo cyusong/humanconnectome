@@ -139,7 +139,7 @@ def generate_search_route(search_type):
             split_search = my_search.split(';')
             elements = []
   
-            to_search = pickle.load(open('allDic2', 'rb'))
+            to_search = pickle.load(open('allDic', 'rb'))
             ab = pickle.load(open('abbreviations', 'rb'))[0]
             fa = pickle.load(open('fa', 'rb'))[0]
 

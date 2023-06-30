@@ -37,7 +37,7 @@ def api_author(query):
 		count = record["Count"]
 
 		if len(hits):
-			genes, elements, papers = pickle.load(open('allDic2', 'rb')), [], []
+			genes, elements, papers = pickle.load(open('allDic', 'rb')), [], []
 			for i in genes:
 				for j in genes[i]:
 					if j[3] in hits and len(j[0]) and len(j[2]):
@@ -73,7 +73,7 @@ def title_search(query):
 		hits, forSending = list(set(pmids) & set(papers)), []
 
 		if len(hits):
-			genes, elements, papers = pickle.load(open('allDic2', 'rb')), [], []
+			genes, elements, papers = pickle.load(open('allDic', 'rb')), [], []
 			for i in genes:
 				for j in genes[i]:
 					if j[3] in hits and len(j[0]) and len(j[2]):

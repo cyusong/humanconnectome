@@ -47,7 +47,7 @@ def author(query):
         
         forSending = []
         if hits != []:
-            with open('allDic2', 'rb') as file:
+            with open('allDic', 'rb') as file:
                 genes = pickle.load(file)
             
             elements = []
