@@ -37,9 +37,9 @@ const gene_form_listeners = () => {
 function submitGeneForm(event, form, path) {
     if (titleInput.value === "") {
         if (path === '/form/gene_id/alias') {
-            titleInput.value = 'CESA1';
+            titleInput.value = 'ESR1';
         } else {
-            titleInput.value = 'CESA';
+            titleInput.value = 'ESR1';
         }
     }
     form.submit();
@@ -48,7 +48,7 @@ function submitGeneForm(event, form, path) {
 function submitNameForm(event, form) {
     const titleInput = document.getElementById("author");
     if (titleInput.value === "") {
-        titleInput.value = 'Marek Mutwil';
+        titleInput.value = 'Melissa Fullwood';
     }
     form.submit();
 }
@@ -56,7 +56,7 @@ function submitNameForm(event, form) {
 function submitTitleForm(event, form) {
     const titleInput = document.getElementById("title");
     if (titleInput.value === "") {
-        titleInput.value = '26503768';
+        titleInput.value = '19890323';
     }
     form.submit();
 }
@@ -104,76 +104,69 @@ const change_help_text = (button, text) => {
         case 'word':
             help_text = `
             <p>
-                Find all entities that contains the searched query.  For instance, if "CESA" is searched, this search will find the 
+                Find all entities that contains the searched query.  For instance, if "ESR1" is searched, this search will find the 
                 following entities:
                 <ul style = 'color: green;'>
-                    <li> CESA </li>
-                    <li> CESA genes </li>
-                    <li> Normal CESA complexes </li>
+                    <li> ESR1 </li>
+                    <li> ESR1 and JUN </li>
+                    <li> Epigenetic changes at ESR1 changes </li>
                 </ul>
                 However, it will not find entities such as:
                 <br> <br>
                 <ul style = 'color: red;'>
-                    <li> CESA3 (i.e., another word) </li>
-                    <li> ATCESA  (i.e., another word) </li>
+                    <li> ESR2 (i.e., another word) </li>
                 </ul>
             </p>`;
             break;
         case 'exact':
             help_text = `
             <p>
-                Finds the entity that matches the search query <em> exactly</em>.  For instance, if "CESA" is searched, this search will find the 
+                Finds the entity that matches the search query <em> exactly</em>.  For instance, if "ESR1" is searched, this search will find the 
                 following entity:
                 <ul style = 'color: green;'>
-                    <li> CESA </li>
+                    <li> ESR1 </li>
                 </ul>
                 However, it will not find entities such as:
                 <br> <br>
                 <ul style = 'color: red;'>
-                    <li> CESA genes </li>
+                    <li> ESR1 and JUN </li>
                 </ul>
             </p>`;
             break;
         case 'alias':
             help_text = `
             <p>
-                Finds all gene aliases that are associated with the search query.  For instance, if "CESA1" is searched, this search will find the 
+                Finds all gene aliases that are associated with the search query.  For instance, if "ESR1" is searched, this search will find the 
                 following entities:
                 <ul style = 'color: green;'>
-                    <li> CESA1 </li>
-                    <li> RSW1 </li>
-                    <li> ATCESA1 </li>
-                    <li> ANY1 </li>
-                    <li> Columbia and RSW1 </li>
-                    <li> CESA1 and CESA4 transcripts </li>
+                    <li> ESR1 </li>
                 </ul>
             </p>`;
             break;
         case 'substring':
             help_text = `
             <p>
-                Finds all entities that contain the search query as a substring.  For instance, if "hair" is searched, this search will find the 
+                Finds all entities that contain the search query as a substring.  For instance, if "TAD"(topologically associating domain) is searched, this search will find the 
                 following entities:
                 <ul style = 'color: green;'>
-                    <li> root hairs </li>
-                    <li> hairy roots </li>
+                    <li> ATAD2 (gene) </li>
+                    <li> GATAD1 (gene) </li>
                 </ul>
             </p>`;
             break;
         case 'non-alphanumeric':
             help_text = `
             <p>
-                Finds all entities that contain the search query followed by a non-alphanumeric character.  For instance, if "CESA1" 
+                Finds all entities that contain the search query followed by a non-alphanumeric character.  For instance, if "ESR1" 
                 is searched, this search will find the following entities:
                 <ul style = 'color: green;'>
-                    <li> CESA1-10 </li>
-                    <li> CESA1/3 </li>
+                    <li> MAST4-KD/ESR1-KD </li>
+                    <li> ESR1-MUTANT CELLS </li>
                 </ul>
                 However, it will not find entities such as:
                 <br> <br>
                 <ul style = 'color: red;'>
-                    <li> CESA10 </li>
-                    <li> CESA10/3 </li>
+                    <li>  </li>
                 </ul>
             </p>`;            
             break;
