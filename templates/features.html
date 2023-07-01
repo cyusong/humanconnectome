@@ -16,18 +16,18 @@
         <br>
         <h1> Database Features </h1>
         <br>
-        <p> Learn more about PlantConnectome and its novel utilities. </p>
+        <p> Learn more about 3D GenomeConnectome and its novel utilities. </p>
         <br>
     </div>
     <hr>
-    <h2> Composition of PlantConnectome </h2>
+    <h2> Composition of 3D GenomeConnectome </h2>
     <br>
     <div class = 'grid-x grid-margin-x'>
         <div class = 'cell medium-6'>
             <br>
-            PlantConnectome was constructed by surveying numerous journals (shown in the pie chart to the right) using GPT. 
+            3D GenomeConnectome was constructed by surveying numerous journals (shown in the pie chart to the right) using GPT. 
             <br> <br>
-            Unifying more than <strong>100,000</strong> plant studies, PlantConnectome can be used to study genes, metabolites, tissues, and other biological entities, illuminating over <strong>350,000</strong> relationships altogether. 
+            Unifying more than <strong>20,000</strong> 3D genome studies, 3D GenomeConnectome can be used to study genes, chromatin interactions, and other biological entities, illuminating over <strong>95,000</strong> relationships altogether. 
         </div>
         <div class = 'cell medium-6'>
             <canvas id = "piechart" width = '550' height = '200'> </canvas>
@@ -37,8 +37,8 @@
     <br>
     <hr>
     <div class = 'text-center'>
-        <h2> Searching PlantConnectome </h2>
-        <p> PlantConnectome offers three search options: </p>
+        <h2> Searching 3D GenomeConnectome </h2>
+        <p> 3D GenomeConnectome offers three search options: </p>
         <br>
     </div>
     <div class = 'grid-x grid-margin-x medium-up-3'>
@@ -51,9 +51,9 @@
                     <p>
                         Search by keywords and gene IDs:
                         <ul style= "text-align: left;">
-                            <li> CESA1 </li>
-                            <li> AT4G32410 </li>
-                            <li> Proline </li>
+                            <li> ESR1 </li>
+                            <li> Enhancer </li>
+                            <li> ChIA-PET </li>
                         </ul>
                     </p>
                 </div>
@@ -122,7 +122,7 @@
                 <div class = 'card-divider' style="display: flex; justify-content: center;">
                     <strong> Abbreviations  </strong>
                 </div>
-                <img src = "{{ url_for('static', filename = '/abbrs.png') }}" alt = "A sample entity-relationship graph">
+                <img src = "{{ url_for('static', filename = '/abbrevs.png') }}" alt = "A sample entity-relationship graph">
                 <div class = 'card-section' style= "text-align: left;">
                     <p>
                         A collection of abbreviations associated with the search query is displayed.
@@ -135,7 +135,7 @@
                 <div class = 'card-divider' style="display: flex; justify-content: center;">
                     <strong> Entity Relationship Graph </strong>
                 </div>
-                <img src = '../static/Capture.PNG' alt = "A sample entity-relationship graph">
+                <img src = '../static/capture.png' alt = "A sample entity-relationship graph">
                 <div class = 'card-section' style= "text-align: left; overflow: scroll;">
                     <p>
                         This directed graph summarizes the various entities in the database sharing relationships with the search query. Each circle (i.e., node) and arrow (i.e., edge) on the graph represents an entity and a relationship shared between two entities, respectively.
@@ -150,7 +150,7 @@
                 <div class = 'card-divider' style="display: flex; justify-content: center;">
                     <strong> Text Summary </strong>
                 </div>
-                <img src = '../static/text-summary.png' alt = "Text-summary of search results">
+                <img src = '../static/text_summary.png' alt = "Text-summary of search results">
                 <div class = 'card-section' style= "text-align: left;">
                     <p>
                         A text summary of the entity-relationship graph is shown for reference, where each paragraph corresponds to a separate cluster of nodes.
@@ -163,7 +163,7 @@
                 <div class = 'card-divider' style="display: flex; justify-content: center;">
                     <strong> Entity Relationship Table </strong>
                 </div>
-                <img src = '../static/table.png' alt = "A sample entity-relationship graph">
+                <img src = '../static/table_summary.png' alt = "A sample entity-relationship graph">
                 <div class = 'card-section' style= "text-align: left;">
                     A table summary of the node-edge interactions in the Knowledge Network graph is also shown, which is fully sortable, downloadable as a TSV file, and has hyperlinked Pubmed IDs.
                 </div>            
