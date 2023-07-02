@@ -32,22 +32,25 @@
           <br> <br>
           For instance, after examining the abstract
           <blockquote>
-            "In plants, regulation of cellulose synthesis is fundamental for morphogenesis and plant growth. 
-            Cellulose is synthesized at the plasma membrane, and the orientation of synthesis is guided by cortical 
-            microtubules; however, the guiding mechanism is currently unknown. We show that the conditional root elongation 
-            pom2 mutants are impaired in cell elongation, fertility, and microtubule-related functions. Map-based cloning of 
-            the POM-POM2 locus revealed that it is allelic to CELLULOSE SYNTHASE INTERACTING1 (CSI1). Fluorescently tagged 
-            POM2/CSI1s associated with both plasma membrane-located cellulose synthases (CESAs) and post-Golgi CESA-containing 
-            compartments. Interestingly, while CESA insertions coincided with cortical microtubules in the pom2/csi1 mutants, 
-            the microtubule-defined movement of the CESAs was significantly reduced in the mutant. We propose that POM2/CSI1 provides 
-            a scaffold between the CESAs and cortical microtubules that guide cellulose synthesis."
+            "The cohesin complex plays an important role in sister chromatin cohesion. Cohesin's core is composed of two structural 
+            maintenance of chromosome (SMC) proteins, called Smc1 and Smc3. SMC proteins are built from a globular hinge domain, a 
+            rod-shaped domain composed of long anti-parallel coiled-coil (CC), and a second globular adenosine triphosphatase domain 
+            called the head. The functions of both head and hinge domains have been studied extensively, yet the function of the CC 
+            region remains elusive. We identified a mutation in the CC of smc3 (L217P) that disrupts the function of the protein. 
+            Cells carrying the smc3-L217P allele have a strong cohesion defect and complexes containing smc3-L217P are not loaded 
+            onto the chromosomes. However, the mutation does not affect inter-protein interactions in either the core complex or with 
+            the Scc2 loader. We show by molecular dynamics and biochemistry that wild-type Smc3 can adopt distinct conformations, and 
+            that adenosine triphosphate (ATP) induces the conformational change. The L217P mutation restricts the ability of the 
+            mutated protein to switch between the conformations. We suggest that the function of the CC is to transfer ATP binding/hydrolysis 
+            signals between the head and the hinge domains. The results provide a new insight into the mechanism of cohesin activity."
           </blockquote>
           GPT returned the following statements:
           <ol>
-            <li> Cellulose: !synthesized at! Plasma Membrane </li>
-            <li> Cortical Microtubules: !guide! Cellulose Synthesis </li>
-            <li> POM2/CSI1: !associates with! CESAs </li>
-            <li> POM2/CSI1: !provides scaffold between! CESAs and Cortical Microtubules </li>
+            <li> Smc1: !interacts with! Smc3 </li>
+            <li> Smc3: !binds to! Scc2 </li>
+            <li> Smc3: !switches between! conformations </li>
+            <li> ATP: !induces! conformational change </li>
+            <li> L217P mutation: !restricts! ability to switch </li>
           </ol>
         </p>
       </div>
@@ -56,10 +59,10 @@
       <a class = "accordion-title"> How can I search the database?  </a>
       <div class = "accordion-content" data-tab-content>
         <p>
-          Because PlantConnectome is built from processed abstracts, gene identifiers such as AT4G32410 may not be interpretable by GPT. Instead, search with
-          gene symbols (e.g., CESA1), as these are used in the literature.
+          Because 3D GenomeConnectome is built from processed abstracts, gene identifiers such as "HGNC: 11111 NCBI Gene: 8243 Ensembl: ENSG00000072501" may not be interpretable by GPT. Instead, search with
+          gene symbols (e.g., SMC1), as these are used in the literature.
           <br> <br>
-          You can also choose to search for <strong>terms</strong> mentioned in the abstracts (for instance, "proline", "cold", "root hair", etc.), <strong>author names</strong>, or <strong>PubMed IDs</strong>.
+          You can also choose to search for <strong>terms</strong> mentioned in the abstracts (for instance, "cohesin", "chromatin", etc.), <strong>author names</strong>, or <strong>PubMed IDs</strong>.
         </p>
       </div>
     </li>
@@ -67,7 +70,7 @@
       <a class = "accordion-title"> Which papers were analyzed?  </a>
       <div class = "accordion-content" data-tab-content>
         <p>
-          To ensure PlantConnectome reflects state-of-the-art knowledge, all research papers from which it derives were published <strong>after 2004</strong>. All articles from plant journals were downloaded, whereas non-plant-specific journals (e.g., PNAS, Cell, etc.) were harvested only for their publications examining plants.
+          To ensure 3D GenomeConnectome reflects state-of-the-art knowledge, all research papers from which it derives were published <strong>after 2008</strong>. Articles related to chromatin interactions and 3D genome organization were downloaded for the analysis.
         </p>
         <img src = "{{ url_for('static', filename = 'article.png') }}" style = "max-width: 50%;" alt = "My Image">
       </div>
